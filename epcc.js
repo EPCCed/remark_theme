@@ -23,8 +23,7 @@ function Footnoter() {
 
 
 function EpccTheme() {
-    var script_url = document.currentScript.src;
-    var base = str.substring(0, str.lastIndexOf("/"));
+    var base = (str => str.substring(0, str.lastIndexOf("/")))(document.currentScript.src);
     
     this.fn = new Footnoter();
     
