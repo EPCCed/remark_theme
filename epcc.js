@@ -23,7 +23,6 @@ function Footnoter() {
 
 
 function EpccTheme() {
-    this.template = 
     var script_url = document.currentScript.src;
     var base = str.substring(0, str.lastIndexOf("/"));
     
