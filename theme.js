@@ -2,10 +2,11 @@ function Theme(base_url, style_url, macros, markdown_url) {
     this.subs = {
 	'$BASEURL': base_url
     };
-        
-    this.style = this.subst(style_url) || undefined;
+
+    var subOrUndef = x => (x ? this.subst(x) : undefined);
+    this.style = subOrUndef(style_url)
     this.macros = macros || {};
-    this.markdown = this.subst(markdown_url) || undefined;
+    this.markdown = subOrUndef(markdown_url);
 };
 
 Theme.prototype.subst = function(s) {
