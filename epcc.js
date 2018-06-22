@@ -29,6 +29,7 @@ function EpccTheme() {
     
     Theme.call(
 	this,
+	base,
 	'$BASEURL/style.css',
 	{
 	    scale_img:  function (percentage) {
