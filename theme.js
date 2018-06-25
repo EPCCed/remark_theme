@@ -1,7 +1,7 @@
 function Theme(base_url, style_url, macros, markdown_url) {
-    this.subs = {
-	'$BASEURL': base_url
-    };
+    this.subs = [
+	[/\$BASEURL/g, base_url]
+    ];
 
     var subOrUndef = x => (x ? this.subst(x) : undefined);
     this.style = subOrUndef(style_url)
@@ -10,8 +10,10 @@ function Theme(base_url, style_url, macros, markdown_url) {
 };
 
 Theme.prototype.subst = function(s) {
-    for (var k in this.subs)
-	s = s.replace(k, this.subs[k]);
+    this.subs.forEach(sub => {
+	// regexp, replacement = sub
+	s = s.replace(sub[0], sub[1]);
+    });
     return s
 };
 
