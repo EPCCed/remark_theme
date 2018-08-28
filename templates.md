@@ -1,7 +1,7 @@
 name: base
 layout: true
-<div class="header"><img src="$BASEURL/ed-logo-white.png" /></div>
-<div class="footer"><img src="$BASEURL/epcc-white.png" /><p></p></div>
+<div class="header">![:header]()</div>
+<div class="footer">![:footer]()</div>
 
 ---
 
