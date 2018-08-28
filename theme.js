@@ -1,4 +1,22 @@
+// Create a theme object, that when installed, will change the look of
+// Remark presentations.
+
+// base_url = (Required) The base URL of the *theme*. You might wish
+// to generate this dynamically with e.g.:
+//   (str => str.substring(0, str.lastIndexOf("/")))(document.currentScript.src)
+// This URL can be referenced in other parts of the theme with
+// "$BASEURL"
+
+// style_url = (Optional) The URL of the theme's .css file
+
+// macros = (Optional) A mapping from keys to functions that define
+// your theme's remark macros
+
+// markdown_url = (Optional) The URL of the theme's Markdown preamble
+// (to define slide templates etc)
+
 function Theme(base_url, style_url, macros, markdown_url) {
+    // Substitutions to be applied
     this.subs = [
 	[/\$BASEURL/g, base_url]
     ];
@@ -25,6 +43,7 @@ Theme.prototype.loadUrl = function(url) {
     return xhr.responseText;
 };
 
+// Install the theme into Remark (by intercepting the create function)
 Theme.prototype.install = function (rmk, doc) {
     // So you can capture this in a closure
     var self = this;
