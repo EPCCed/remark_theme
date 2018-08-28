@@ -61,6 +61,13 @@ div.footer img {
     float: left;
 }
 
+div.footer p {
+    position: relative;
+    left: 20px;
+    bottom: 8px;
+    font-size: smaller;
+}
+
 /* Make title box UoE blue */
 div.titlebox {
     background-color: rgb(0,50,95);
