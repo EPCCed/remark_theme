@@ -54,7 +54,6 @@ Theme.prototype.install = function (rmk, doc) {
     doc = doc || document;
     
     if (this.style) {
-	
 	// Add style sheet to the document
 	var fileref = doc.createElement("link");
 	fileref.setAttribute("rel", "stylesheet");
@@ -87,15 +86,16 @@ Theme.prototype.install = function (rmk, doc) {
 	    if (options.sourceUrl) {
 		body = self.loadUrl(options.sourceUrl);
 		delete options.sourceUrl;
-		
-	    } else if (!options.hasOwnProperty('source')) {
+	    } else if (options.hasOwnProperty('source')){
+		body = options.source;
+	    } else {
 		sourceElement = this.dom.getElementById('source');
 		if (sourceElement) {
 		    body = unescape(sourceElement.innerHTML);
 		    sourceElement.style.display = 'none';
 		}
 	    }
-	    
+
 	    options.source = header + body;
 
 	    return self.rmk_create.apply(this, [options]);
