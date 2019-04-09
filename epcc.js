@@ -31,8 +31,9 @@ function EpccTheme() {
     this.header = function() {
 	return self.subst("<img src=\"$BASEURL/ed-logo-white.png\" />");
     };
+    this.footer_text = "";
     this.footer = function() {
-	return self.subst("<img src=\"$BASEURL/epcc-white.png\" /><p></p>");
+	return self.subst("<img src=\"$BASEURL/epcc-white.png\" /><p>"+ self.footer_text + "</p>");
     }
     macros = {
 	scale_img: function (percentage) {
