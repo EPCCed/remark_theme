@@ -1,0 +1,108 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body { font-family: 'Droid Serif'; }
+h1, h2, h3 {
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: normal;
+}
+.remark-code, .remark-inline-code {
+    font-family: 'Ubuntu Mono';
+}
+
+/* Header and slide no. need to be white to be visible over UoE blue
+   background. */
+h1 {
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.remark-slide-number {
+    color: white;
+    opacity: 1.0;
+}
+
+/* Fix the header and footer bars in position and colour them UoE
+   blue*/
+div.header {
+    background-color: rgb(0,50,95);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 120px;
+    width: 100%;
+    text-align: left;
+}
+div.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    background-color: rgb(0,50,95);
+    color: white;
+    text-align: left;
+}
+
+/* Place the UoE and EPCC logos */
+div.header img {
+    height: 100px;
+    top: 10px;
+    right: 10px;
+    position: fixed;
+}
+div.footer img {
+    height: 30px;
+    top: 5px;
+    left: 10px;
+    position: relative;
+    float: left;
+}
+
+div.footer p {
+    position: relative;
+    left: 20px;
+    bottom: 8px;
+    font-size: smaller;
+}
+
+/* Make title box UoE blue */
+div.titlebox {
+    background-color: rgb(0,50,95);
+    color: white;
+}
+
+/* Fix footnotes box to just above foot box */
+div.footnotes {
+    position: fixed;
+    bottom: 40px;
+    font-size: smaller;
+}
+
+/* Enable two column layout */
+.columns {
+    display: flex;
+}
+.col {
+    width: 50%;
+    padding: 0 1%;
+    box-sizing: border-box;
+}
+
+
+@page {
+    size: 908px 681px;
+    margin: 0;
+}
+
+@media print {
+    .remark-slide-scaler {
+	width: 100% !important;
+	height: 100% !important;
+	transform: scale(1) !important;
+	top: 0 !important;
+	left: 0 !important;
+    }
+}
