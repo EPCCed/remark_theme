@@ -29,11 +29,11 @@ function EpccTheme() {
     // Capture this for use in closures
     var self = this;
     this.header = function() {
-	return self.subst("<img src=\"$BASEURL/ed-logo-white.png\" />");
+	return self.subst("<img class=\"uoe\" src=\"$BASEURL/UoE_Horizontal.png\" alt=\"The University of Edinburgh logo\" /> <img class=\"epcc\" src=\"$BASEURL/epcc-logo.png\" alt=\"EPCC logo\"/>");
     };
     this.footer_text = "";
     this.footer = function() {
-	return self.subst("<img src=\"$BASEURL/epcc-white.png\" /><p>"+ self.footer_text + "</p>");
+	return self.subst("<p>"+ self.footer_text + "</p>");
     }
     macros = {
 	scale_img: function (percentage) {

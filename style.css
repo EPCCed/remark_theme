@@ -1,33 +1,56 @@
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-body { font-family: 'Droid Serif'; }
+@font-face {
+    font-family: "Gilroy-Regular";
+    src: url(https://www.epcc.ed.ac.uk/themes/custom/epcc/fonts/GilroyRegular/font.woff2) format("woff2"), url(/themes/custom/epcc/fonts/GilroyRegular/font.woff) format("woff");
+}
+@font-face {
+    font-family: "Gilroy-SemiBold";
+    src: url(/themes/custom/epcc/fonts/GilroySemiBold/font.woff2) format("woff2"), url(/themes/custom/epcc/fonts/GilroySemiBold/font.woff) format("woff");
+}
+
+:root {
+    /* Define UoE/EPCC colours */
+    --uoe-blue: #041e42;
+    --epcc-blue: #253746;
+    --epcc-yellow: #F0B323;
+    --epcc-green: #009f93;
+    --offwhite: #fffdf3;
+}
+
+body {
+    font-family: 'Gilroy-Regular';
+}
+
+.remark-slide-content {
+    /* off white to improve readability */
+    background-color: var(--offwhite);
+}
+
 h1, h2, h3 {
-    font-family: 'Yanone Kaffeesatz';
-    font-weight: normal;
+    color: var(--epcc-blue);
+    font-weight: bold;
 }
 .remark-code, .remark-inline-code {
     font-family: 'Ubuntu Mono';
 }
 
-/* Header and slide no. need to be white to be visible over UoE blue
-   background. */
 h1 {
-    color: white;
     position: relative;
     z-index: 10;
 }
 
+a {
+    color: var(--epcc-green);
+}
+
 .remark-slide-number {
-    color: white;
+    color: var(--epcc-blue);
     opacity: 1.0;
 }
 
-/* Fix the header and footer bars in position and colour them UoE
-   blue*/
+/* Fix the header and footer bars in position */
 div.header {
-    background-color: rgb(0,50,95);
     position: fixed;
     top: 0px;
     left: 0px;
@@ -41,24 +64,25 @@ div.footer {
     left: 0px;
     height: 40px;
     width: 100%;
-    background-color: rgb(0,50,95);
-    color: white;
+    color: var(--epcc-blue);
     text-align: left;
+    /* Add EPCC yellow footer */
+    border-bottom-style: solid;
+    border-color: var(--epcc-yellow);
+    border-width: 12px;
 }
 
 /* Place the UoE and EPCC logos */
 div.header img {
-    height: 100px;
+    height: 40px;
     top: 10px;
-    right: 10px;
     position: fixed;
 }
-div.footer img {
-    height: 30px;
-    top: 5px;
+div.header img.uoe {
     left: 10px;
-    position: relative;
-    float: left;
+}
+div.header img.epcc {
+    right: 10px;
 }
 
 div.footer p {
@@ -68,12 +92,15 @@ div.footer p {
     font-size: smaller;
 }
 
-/* Make title box UoE blue */
+/* Make title box text blue */
 div.titlebox {
-    background-color: rgb(0,50,95);
-    color: white;
+    color: var(--offwhite);
+    background-color: var(--epcc-blue);
 }
 
+div.titlebox h1, h2, h3 {
+    color: var(--offwhite);
+}
 /* Fix footnotes box to just above foot box */
 div.footnotes {
     position: fixed;
@@ -93,7 +120,7 @@ div.footnotes {
 
 
 @page {
-    size: 908px 681px;
+    size: 1210px 681px;
     margin: 0;
 }
 
