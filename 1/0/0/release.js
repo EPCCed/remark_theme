@@ -128,7 +128,7 @@ function Footnoter() {
 // Constructor for the EPCC theme
 // Can override the header and footer macros to customise text
 function EpccTheme() {
-    this.base = (str => str.substring(0, str.lastIndexOf("/")))(document.currentScript.src);
+    this.base = (str => str.substring(0, str.lastIndexOf("/")))(import.meta.url);
     this.fn = new Footnoter();
     // Capture this for use in closures
     var self = this;
@@ -139,7 +139,7 @@ function EpccTheme() {
     this.footer = function() {
 	return self.subst("<img src=\"$BASEURL/epcc-white.png\" /><p>"+ self.footer_text + "</p>");
     }
-    macros = {
+    const macros = {
 	scale_img: function (percentage) {
 	    var url = this;
 	    return '<img src="' + url + '" style="width: ' + percentage + '" />';
@@ -158,4 +158,6 @@ function EpccTheme() {
 EpccTheme.prototype = Object.create(Theme.prototype);
 EpccTheme.prototype.constructor = EpccTheme;
 
-epcc = new EpccTheme();
+var epcc = new EpccTheme();
+
+export {EpccTheme, epcc};
