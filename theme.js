@@ -102,3 +102,5 @@ Theme.prototype.install = function (rmk, doc) {
 	}
     }
 };
+
+export {Theme};
