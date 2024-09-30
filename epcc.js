@@ -38,9 +38,10 @@ function EpccTheme() {
 	return self.subst("<p>"+ self.footer_text + "</p>");
     }
     const macros = {
-	scale_img: function (percentage) {
+	scale_img: function (percentage, alt) {
 	    var url = this;
-	    return '<img src="' + url + '" style="width: ' + percentage + '" />';
+	    alt = alt || "";
+	    return '<img src="' + url + '" alt="' + alt + '" style="width: ' + percentage + '" />';
 	},
 	fn_start: this.fn.clear,
 	fn_clear: this.fn.clear,
