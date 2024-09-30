@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+@font-face {
+    font-family: "Gilroy-Regular";
+    src: url(https://www.epcc.ed.ac.uk/themes/custom/epcc/fonts/GilroyRegular/font.woff2) format("woff2"), url(/themes/custom/epcc/fonts/GilroyRegular/font.woff) format("woff");
+}
+@font-face {
+    font-family: "Gilroy-SemiBold";
+    src: url(/themes/custom/epcc/fonts/GilroySemiBold/font.woff2) format("woff2"), url(/themes/custom/epcc/fonts/GilroySemiBold/font.woff) format("woff");
+}
+
+:root {
+    /* Define UoE/EPCC colours */
+    --uoe-blue: #041e42;
+    --epcc-blue: #253746;
+    --epcc-yellow: #F0B323;
+    --epcc-green: #009f93;
+    --offwhite: #fffdf3;
+}
+
+body {
+    font-family: 'Gilroy-Regular';
+}
+
+.remark-slide-content {
+    /* off white to improve readability */
+    background-color: var(--offwhite);
+}
+
+h1, h2, h3 {
+    color: var(--epcc-blue);
+    font-weight: bold;
+}
+.remark-code, .remark-inline-code {
+    font-family: 'Ubuntu Mono';
+}
+
+h1 {
+    position: relative;
+    z-index: 10;
+    margin-block-start: 0.5em;
+    margin-block-end: 0;
+}
+
+a {
+    color: var(--epcc-green);
+}
+
+.remark-slide-number {
+    color: var(--epcc-blue);
+    opacity: 1.0;
+}
+
+/* Fix the header and footer bars in position */
+div.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: left;
+}
+div.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    color: var(--epcc-blue);
+    text-align: left;
+    /* Add EPCC yellow footer */
+    border-bottom-style: solid;
+    border-color: var(--epcc-yellow);
+    border-width: 12px;
+}
+
+/* Place the UoE and EPCC logos */
+div.header img {
+    height: 40px;
+    top: 10px;
+    position: fixed;
+}
+div.header img.uoe {
+    left: 10px;
+}
+div.header img.epcc {
+    right: 10px;
+}
+
+div.footer p {
+    position: relative;
+    left: 20px;
+    bottom: 8px;
+    font-size: smaller;
+}
+
+/* Make title box text blue */
+div.titlebox {
+    color: var(--offwhite);
+    background-color: var(--epcc-blue);
+}
+
+div.titlebox h1, h2, h3 {
+    color: var(--offwhite);
+}
+/* Fix footnotes box to just above foot box */
+div.footnotes {
+    position: fixed;
+    bottom: 40px;
+    font-size: smaller;
+}
+
+/* Enable two column layout */
+.columns {
+    display: flex;
+}
+.col {
+    width: 50%;
+    padding: 0 1%;
+    box-sizing: border-box;
+}
+
+
+@page {
+    size: 1210px 681px;
+    margin: 0;
+}
+
+@media print {
+    .remark-slide-scaler {
+	width: 100% !important;
+	height: 100% !important;
+	transform: scale(1) !important;
+	top: 0 !important;
+	left: 0 !important;
+    }
+}
