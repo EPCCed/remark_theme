@@ -11,6 +11,6 @@ git archive $tag | tar -x -C $reldir
 git add $reldir
 
 rm -f latest.js
-echo "export {*} from \"./$reldir/theme.js\";" >> latest.js
-echo "export {*} from \"./$reldir/epcc.js\";" >> latest.js
+echo "export * from \"./$reldir/theme.js\";" >> latest.js
+echo "export * from \"./$reldir/epcc.js\";" >> latest.js
 git add latest.js
